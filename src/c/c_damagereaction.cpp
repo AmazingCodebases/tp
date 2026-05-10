@@ -4,10 +4,10 @@
 #include "f_op/f_op_actor_mng.h"
 #include "d/d_s_play.h"
 
-u8 cDmr_SkipInfo;
-u8 data_80450C99;
-u8 data_80450C9A;
-u8 data_80450C9B;
+u8 cDmr_SkipInfo = 0;
+u8 data_80450C99 = 0;
+u8 data_80450C9A = 0;
+u8 data_80450C9B = 0;
 
 u8 data_80450C9C;
 u8 data_80450C9D;
