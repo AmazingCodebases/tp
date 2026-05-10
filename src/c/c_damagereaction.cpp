@@ -9,10 +9,10 @@ u8 data_80450C99 = 0;
 u8 data_80450C9A = 0;
 u8 data_80450C9B = 0;
 
-u8 data_80450C9C;
-u8 data_80450C9D;
-u8 data_80450C9E;
-u8 cDmr_FishingWether;
+u8 data_80450C9C = 0;
+u8 data_80450C9D = 0;
+u8 data_80450C9E = 0;
+u8 cDmr_FishingWether = 0;
 
 #if DEBUG
 void debug_actor_create() {
@@ -21,7 +21,8 @@ void debug_actor_create() {
 #endif
 
 void JPTraceParticleCallBack4::execute(JPABaseEmitter* param_0, JPABaseParticle* param_1) {
-    u32 age = param_1->getAge();
+    u32 age = 0;
+    age = param_1->getAge();
     if (age != 0) {
         Vec* user_work = (Vec*)param_0->getUserWork();
         JGeometry::TVec3<f32> vec1, vec2, vec3;
