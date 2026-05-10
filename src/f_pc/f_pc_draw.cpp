@@ -12,7 +12,7 @@
 int fpcDw_Execute(base_process_class* i_proc) {
     if (!fpcPause_IsEnable(i_proc, 2)) {
         layer_class* save_layer;
-        int ret;
+        int ret = 0;
         process_method_func draw_func;
     
         save_layer = fpcLy_CurrentLayer();
@@ -32,7 +32,7 @@ int fpcDw_Execute(base_process_class* i_proc) {
 }
 
 int fpcDw_Handler(fpcDw_HandlerFuncFunc i_iterHandler, fpcDw_HandlerFunc i_func) {
-    int ret;
+    int ret = 0;
     cAPIGph_BeforeOfDraw();
     ret = i_iterHandler(i_func);
     cAPIGph_AfterOfDraw();
