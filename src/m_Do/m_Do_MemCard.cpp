@@ -27,8 +27,9 @@
 s32 my_CARDOpen(s32 chan, const char* fileName, CARDFileInfo* fileInfo) {
     CARDStat stat;
     DVDDiskID* diskID = DVDGetCurrentDiskID();
+    int i = 0;
     
-    for (int i = 0; i < CARD_MAX_FILE; i++) {
+    for (i = 0; i < CARD_MAX_FILE; i++) {
         s32 ret = CARDGetStatus(chan, i, &stat);
         if (ret == CARD_RESULT_READY) {
             if (memcmp(stat.gameName, "GZ2E", 4) == 0 &&
