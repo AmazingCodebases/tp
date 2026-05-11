@@ -266,7 +266,7 @@ void HioVarious_c::init(JORReflexible* node_ptr, const char* node_name) {
 void HioVarious_c::clean(JORReflexible* node_ptr) {
     JUT_ASSERT(882, node_ptr);
 
-    int i;
+    int i = 0;
     for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         if (M_hio.node_ptrs[i] != node_ptr) {
             continue;
@@ -284,7 +284,8 @@ void HioVarious_c::clean(JORReflexible* node_ptr) {
 }
 
 void HioVarious_c::genMessage(JORMContext* mctx) {
-    for (int i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
         if (node_ptrs[i]) {
             mctx->genNode(node_names[i], node_ptrs[i], 0, 0);
         }
@@ -297,7 +298,8 @@ cXyz HioThrow_c::M_throw_pos_now(cXyz::Zero);
 
 HioThrow_c::HioThrow_c() {
     field_0xa4 = -1;
-    for (int i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         node_ptrs[i] = NULL;
         node_names[i] = NULL;
     }
@@ -306,7 +308,7 @@ HioThrow_c::HioThrow_c() {
 void HioThrow_c::init(JORReflexible* node_ptr, const char* node_name) {
     JUT_ASSERT(945, node_ptr && node_name);
 
-    int i;
+    int i = 0;
     for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         if (M_hio.node_ptrs[i]) {
             continue;
@@ -328,7 +330,7 @@ void HioThrow_c::init(JORReflexible* node_ptr, const char* node_name) {
 void HioThrow_c::clean(JORReflexible* node_ptr) {
     JUT_ASSERT(980, node_ptr);
 
-    int i;
+    int i = 0;
     for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         if (M_hio.node_ptrs[i] != node_ptr) {
             continue;
@@ -370,14 +372,16 @@ HioField_c HioField_c::M_hio;
 
 HioField_c::HioField_c() {
     field_0x84 = -1;
-    for (int i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         node_ptrs[i] = NULL;
         node_names[i] = NULL;
     }
 }
 
 void HioField_c::genMessage(JORMContext* mctx) {
-    for (int i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
         if (node_ptrs[i]) {
             mctx->genNode(node_names[i], node_ptrs[i], 0, 0);
         }
@@ -388,14 +392,16 @@ HioSpot_c HioSpot_c::M_hio;
 
 HioSpot_c::HioSpot_c() {
     field_0x84 = -1;
-    for (int i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         node_ptrs[i] = NULL;
         node_names[i] = NULL;
     }
 }
 
 void HioSpot_c::genMessage(JORMContext* mctx) {
-    for (int i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(node_ptrs); i++) {
         if (node_ptrs[i]) {
             mctx->genNode(node_names[i], node_ptrs[i], 0, 0);
         }
@@ -421,7 +427,8 @@ void HioObj_c::clean() {
 }
 
 void HioObj_c::genMessage(JORMContext* mctx) {
-    for (int i = 0; i < ARRAY_SIZE(M_node_ptr); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(M_node_ptr); i++) {
         mctx->genNode(M_node_name[i], M_node_ptr[i], 0, 0);
     }
 }
