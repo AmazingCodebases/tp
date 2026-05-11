@@ -207,7 +207,8 @@ void HitSeStart(cXyz const* i_sePos, int i_roomNo, dCcD_GObjInf const* i_CcObj, 
             }
         }
 
-        u32 sp10 = param_3 & 0xFF;
+        u32 sp10 = 0;
+        sp10 = param_3 & 0xFF;
         s8 reverb = dComIfGp_getReverb(i_roomNo);
         mDoAud_seStart(sfx, i_sePos, sp10, (s8)reverb);
     }
@@ -233,7 +234,8 @@ HioVarious_c HioVarious_c::M_hio;
 
 HioVarious_c::HioVarious_c() {
     field_0x84 = -1;
-    for (int i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
+    int i = 0;
+    for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         node_ptrs[i] = NULL;
         node_names[i] = NULL;
     }
@@ -242,7 +244,7 @@ HioVarious_c::HioVarious_c() {
 void HioVarious_c::init(JORReflexible* node_ptr, const char* node_name) {
     JUT_ASSERT(849, node_ptr && node_name);
 
-    int i;
+    int i = 0;
     for (i = 0; i < ARRAY_SIZE(M_hio.node_ptrs); i++) {
         if (M_hio.node_ptrs[i]) {
             continue;
